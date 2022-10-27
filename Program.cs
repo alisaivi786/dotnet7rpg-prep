@@ -3,7 +3,7 @@ global using dotnet7rpg_prep.Services.CharacterService;
 global using dotnet7rpg_prep.Dtos.Character;
 global using Microsoft.EntityFrameworkCore;
 global using AutoMapper;
-using dotnet7rpg_prep.Data;
+global using dotnet7rpg_prep.Data;
 
 var builder = WebApplication.CreateBuilder(args);
 
