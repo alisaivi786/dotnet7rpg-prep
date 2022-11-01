@@ -17,8 +17,10 @@ builder.Services.AddDbContext<DataContext>(options =>
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen(c => {
-    c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme {
+builder.Services.AddSwaggerGen(c =>
+{
+    c.AddSecurityDefinition("oauth2", new OpenApiSecurityScheme
+    {
         Description = "Standard Authorization header using the Bearer scheme, e.g. \"bearer {token} \"",
         In = ParameterLocation.Header,
         Name = "Authorization",
@@ -42,6 +44,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidateAudience = false
         };
     });
+builder.Services.AddHttpContextAccessor();
 
 var app = builder.Build();
 
