@@ -4,6 +4,7 @@ global using dotnet7rpg_prep.Dtos.Character;
 global using Microsoft.EntityFrameworkCore;
 global using AutoMapper;
 global using dotnet7rpg_prep.Data;
+global using dotnet7rpg_prep.Services.FightService;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using Microsoft.OpenApi.Models;
@@ -47,6 +48,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
     });
 builder.Services.AddHttpContextAccessor();
 builder.Services.AddScoped<IWeaponService, WeaponService>();
+builder.Services.AddScoped<IFightService, FightService>();
 
 var app = builder.Build();
 
